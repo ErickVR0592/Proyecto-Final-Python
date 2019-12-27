@@ -20,6 +20,6 @@ def guardar():
     archivo.write(dato)
     archivo.close()
     
-    # print(nombreArchivo + " Creado con exito")
+    print(nombreArchivo + " Creado con exito")
     return nombreArchivo
 

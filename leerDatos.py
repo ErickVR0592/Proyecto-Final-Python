@@ -6,7 +6,7 @@ Created on Fri Dec 20 12:09:56 2019
 @author: erickvr
 """
 import serial, time 
-# from tkinter import *
+from tkinter import *
 
 def leerDatos():
     arduino = serial.Serial('/dev/ttyACM0', 9600)
@@ -14,15 +14,16 @@ def leerDatos():
 
     arduino.write(b'1')
     
-    entrada = int(entrada2.get())
+    # entrada = int(entrada2.get())
     
-    # while True:
-    #     try:
-    #         entrada = int(entrada2.get())
-    #         break
-    #     except:
-    #         # print("Introduce un valor valido")
-    #         messagebox.showinfo('Alerta', 'Introduzca un numero')
+    while True:
+        try:
+            entrada = int(entrada2.get())
+            break
+        except:
+            # print("Introduce un valor valido")
+            messagebox.showinfo('Alerta', 'Introduzca un número')
+            break
     lecturas = []
     for i in range(entrada):
         lecturas.append(arduino.readline())
